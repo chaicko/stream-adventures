@@ -61,11 +61,13 @@ parser.on('entry', function (entry) {
     if (entry.type !== 'File') return
 
     entry
-        .pipe(crypto.createHash('md5', { encoding: 'hex'})) // new hash for each entry
+        .pipe(crypto.createHash('md5', {
+            encoding: 'hex'
+        })) // new hash for each entry
         .pipe(through(to_md5_plus_path))
         .pipe(process.stdout)
 
-    function to_md5_plus_path (md5, _, next) {
+    function to_md5_plus_path(md5, _, next) {
         // might just console.log() here
         this.push(md5.toString() + ' ' + entry.path + '\n')
         next()
