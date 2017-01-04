@@ -13,6 +13,7 @@
     "duplexer2": "^0.1.4",
     "request": "^2.79.0",
     "split": "^1.0.0",
+    "stream-combiner": "^0.2.2",
     "through2": "^2.0.3",
     "trumpet": "^1.7.2",
     "websocket-stream": "^3.3.3"
